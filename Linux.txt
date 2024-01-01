@@ -1,51 +1,71 @@
-			LINUX CLASS 4
-VIM EDITOR: It is used to edit the files in linux machine. It has 3 modes. 
+			LINUX CLASS 5
 
-1.  COMMAND MODE
-2.  INSERT MODE
-3.  SAVE & QUIT MODE 
+TO COMPARE 2 FILES : cmp file1 file2
+TO GET THE DIFFERENCES B/W 2 FILES : diff file1 file2
+TO OPEN 2 FILES IN VIM EDITOR: vim -o file1 file2 (up and down)
+TO OPEN 2 FILES IN VIM EDITOR : vim -O file1 file2 (side by side)
+TO ENCRYPT A FILE : gpg -c filename
+TO DECRYPT A FILE : gpg -d filename.gpg
 
-1.  COMMAND MODE: This is the default mode in vim editor. This mode is used to copy the
-content, paste the data, delete, undo redo etc... Make sure that we have to be in
-command mode if you want to perform any action
+LETS UNDERSTAND THE FILE:
+-rw-r--r-- 1 root root 45 Dec 15 13:43 azure
 
-KEYS IN COMMAND MODE:
-gg : used to go to 1st line of a file 
-G : used to go to last line of a file 
-3gg : used to go to 3rd line of a file
-10gg : used to go to 10th line of a file
-:8 : used to go to 8th line of a file 
-M : used to go to middle of the file 
-yy : used to copy the entire line
-3yy : it will copies 3 lines 
-p : used to paste copied content 
-3p : it will prints 3 times 
-dd : used to delete the line
-5dd : used to delete 5 lines 
-u : used to undo the changes
-3u : used to undo 3 times
+TYPE OF THE FILE (-) : 
+- : REGULAR FILE 
+d : DIRECTORY FILE 
+c : CHARACTER FILE
+b : BLOCKED FILE 
 
+PERMISSIONS OF A FILE: (rw-r--r--)
+r : read (4)
+w : write (2)
+x : execute (1)
+- : nothing (0)
+rw- : user permissions = 4+2+0 = 6
+r-- : group permissions = 4+0+0 = 4
+r-- : others permissions = 4+0+0 = 4
+------------
+644
+------------
+EX: 
+user : rwx = 4+2+1 = 7
+group : r-x = 4+0+1 = 5
+others : -w- = 0+2+0 = 2
 
-ctrl + r : used to redo the changes 
-/word : used to search for a word in a file 
-?word : used to search for a word in a file 
-:set number : used to set numbers to the data in a file 
-:%s/old/new/ : this is used to replace a word in a file (each line only 1st occourrance) 
-:%s/old/new/g : this is used to replace all the words in a file
- 
-2. INSERT MODE: This mode is used to insert the data in a file.
+ACL (Access Control List) : 
+file = 1
+folder = 2
 
-i : used to go to insert mode from command mode 
-esc : used to go to command mode from insert mode 
-A : used to go to end of the line
-I : used to go to starting of the line 
-O : used to create a new line (up)
-o : used to create a new line (down)
+FILE OWNERS:
+root = user
+root = group
 
-3. SAVE & QUIT MODE: This mode is used to save the data and quit from vim editor
-:w : data save 
-:q : quit from vim editor 
-:wq : used to save & quit at a time
-:q! : forcefully quit (we will quit from vim editor without saving the data)
-:w! : forcefully save (the data will be saved forcefully)
-:wq! : used to save & quit forcefully 
+NO OF CHARACTERS IN A FILE: (45)
+
+FILE CREATION/MODIFICATION DETAILS (Dec 15 13:43)
+
+FILE NAME (azure)
+
+USER COMMANDS:
+Note: whenever we create any user, group will created automatically.
+if we delete the user, group will be deleted automatically
+whenever we create any user, directory will gets created in /home directory
+TO SEE THE LIST OF USERS : cat /etc/passwd
+TO ADD A USER : useradd username 
+upendra:x:1002:1002::/home/upendra:/bin/bash
+upendra (username)
+x : it stores the password of the user
+1002 : UID (User ID)
+1002 : GID (Group ID)
+/home/upendra : This is users path 
+/bin/bash : this is our shell path 
+TO DELETE A USER : userdel username
+TO GET ID’s OF A USER : id username 
+TO SWITCH TO ANOTHER USER : su - username
+TO SET A PASSWORD TO USER : passwd username
+TO DELETE A USER ALONG WITH FOLDER : userdel -r username (r=recursive)
+
+GROUP COMMANDS:
+TO SEE LIST OF GROUPS : cat /etc/group
+TO CREATE A GROUP : groupadd groupname
+TO DELETE A GROUP : groupadd groupname
