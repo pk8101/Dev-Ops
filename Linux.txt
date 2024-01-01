@@ -1,45 +1,42 @@
-                               LINUX CLASS-2
-SYSTEM COMMANDS:
-1.  TO CHANGE HOSTNAME : hostnamectl set-hostname flm-devops
-2.  TO CHANGE TIME ZONE : timedatectl set-timezone Asia/Kolkata
+				LINUX CLASS 3
+DIRECTORY COMMANDS:
+To create directory : mkdir folder1
+To change the directory : cd folder1
+To go to root directory : cd (or) cd ~
+To go back to previous folder : cd -
+To go back one steps (one folder back) : cd ..
+To go back two steps (two folders back) : cd ../../
+To delete the directory : rm -rf folder 
+To print the working directory : pwd (present working directory)
+To create a file inside a folder : touch foldername/filename
+To create a folder inside a folder : mkdir folder1/folder2
+To create parenting folder (folder inside the folder) automatically : mkdir -p aws/azure/gcp/
 
-HARDWARE COMMANDS:
-1.  TO GET THE CPU INFO : cat /proc/cpuinfo (or) lscpu
-2.  TO GET THE MEM INFO : cat /proc/meminfo (or) free (or) free -m 
-3.  TO GET LIST OF VOLUMES : fdisk -l
-4.  TO GET THE VOLUME INFO : df -h
+cat>filename: used to overwrite the data
+cat>>filename : used to append the data
 
-FILE COMMANDS:
-1.  TO CREATE A FILE : touch filename
-2.  TO CREATE MULTIPLE FILES : touch aws azure gcp
-3.  TO CREATE FILES IN SERIALIZED WAY : touch file{1..7}
-4.  TO SEE ALL THE FILES : ll (or) ls
+COPY COMMANDS:
+COMMAND: used to copy
+SYNTAX: cp source destination
+command: cp file1 file2
+By the above command, the data from file1 copies into file2. But the problem is it will overwrite the
+data which are present in file2.
+To overcome this issue we will use cat command. cat sourcefile (file1)>> destinationfile (file2)
 
-ll vs ls:
-ll (long list) : used to give full info about files 
-ls (short list) : used to give only file names
+MOVE COMMAND:
+SYNTAX: mv source destination
+COMMAND : mv file1 file2
+This is also called renaming a file
 
-REMOVING A FILE :
-rm filename : used to remove single file with permission
-rm -f filename : used to remove single file without permission
-
-HERE -f means forcefully:
-rm aws azure gcp : used to remove multiple file with permission 
-rm -f aws azure gcp : used to remove single file without permission 
-rm -f flm{1..8} : used to remove 8 files without permission
-rm -f * : used to remove all files
-rm -f A* : used to remove files which are started with A*
-rm -f c* : used to remove files which are started with c*
-
-CREATING A FOLDER:
-mkdir foldername : used to create a directory
-HERE mkdir means make directory
-mkdir aws azure gcp : used to create multiple directories
-mkdir srikanth{1..5} : used to create 5 directories (srikanth1 to srikanth5)
- 
-DELETING A FOLDER: 
-rmdir foldername : used to remove single empty directory 
-rmdir aws azure gcp : used to remove multiple empty directory 
-rmdir srikanth{1..5} : used to remove srikanth empty directories 
-rmdir * : used to remove all directories
-rm -rf * : used to remove all files & directories 
+CAT COMMANDS:
+cat : used to read the data in a file
+tac : used to read the data in a reverse order
+head filename : used to print top 10 lines of a file
+tail filename : used to print last 10 lines of a file
+head -4 filename : used to print top 4 lines of a file
+tail -6 filename : used to print last 6 lines of a file
+sed -n ‘4,16p’ filename : used to print the lines between 4 to 16
+cat file1 file2 : used to read the data from2 files at a time and it will not print the data along with the
+file names
+more file1 file2 : used to read the data from 2 files at a time and it will print the data along with the file
+names
