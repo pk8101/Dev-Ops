@@ -1,0 +1,55 @@
+                              LINUX CLASS-1
+
+THERE ARE DIFFERENT TYPES OF COMMANDS IN LINUX
+
+SYSTEM COMMANDS
+HARDWARE COMMANDS
+FILE COMMANDS
+COPY COMMANDS
+PERMISSIONS
+USER COMMANDS
+SEARCH COMMANDS
+NETWORKING COMMANDS
+
+
+By default we are in ec2-user, To switch to root : sudo -i (or) sudo su -
+To logout from root user : exit
+
+
+
+SYSTEM COMMANDS :
+
+uname : to get OS 
+uname -r : to get kernel version
+uname -a : to get full info about os
+uptime : displays since how long our instance is in running state
+uptime -p : it shows only time
+
+
+hostname : to get hostname of the system
+hostname -i : to get private-ip of our system
+ip addr : to get private-ip of our system
+ifconfig : to get private-ip of our system
+ip route : to get private-ip of our system
+
+last reboot : used to get info about last reboot of our system
+
+clear : used to clear the entire screen (or) use ctrl + l (shortcut)
+
+DATE:
+date : used to get todays date
+date +”%d” : to get only date
+date +”%m” : to get only month
+date +”%y” : to get only year
+date +”%H” : to get only Hours
+date +”%M” : to get only minutes
+date +”%S” : to get only seconds
+date +”%D” : date in mm/dd/yyyy
+date +”%F” : date in yyyy-mm-dd
+date +”%A” : day of the week (monday, tuesday)
+date +”%B” : month of the year (jan, feb)
+timedatectl : to get local time, universal time, RTC time ect ...
+
+
+whoami : used to get current loggined user 
+who : used to get list of login users
