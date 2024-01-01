@@ -1,42 +1,51 @@
-				LINUX CLASS 3
-DIRECTORY COMMANDS:
-To create directory : mkdir folder1
-To change the directory : cd folder1
-To go to root directory : cd (or) cd ~
-To go back to previous folder : cd -
-To go back one steps (one folder back) : cd ..
-To go back two steps (two folders back) : cd ../../
-To delete the directory : rm -rf folder 
-To print the working directory : pwd (present working directory)
-To create a file inside a folder : touch foldername/filename
-To create a folder inside a folder : mkdir folder1/folder2
-To create parenting folder (folder inside the folder) automatically : mkdir -p aws/azure/gcp/
+			LINUX CLASS 4
+VIM EDITOR: It is used to edit the files in linux machine. It has 3 modes. 
 
-cat>filename: used to overwrite the data
-cat>>filename : used to append the data
+1.  COMMAND MODE
+2.  INSERT MODE
+3.  SAVE & QUIT MODE 
 
-COPY COMMANDS:
-COMMAND: used to copy
-SYNTAX: cp source destination
-command: cp file1 file2
-By the above command, the data from file1 copies into file2. But the problem is it will overwrite the
-data which are present in file2.
-To overcome this issue we will use cat command. cat sourcefile (file1)>> destinationfile (file2)
+1.  COMMAND MODE: This is the default mode in vim editor. This mode is used to copy the
+content, paste the data, delete, undo redo etc... Make sure that we have to be in
+command mode if you want to perform any action
 
-MOVE COMMAND:
-SYNTAX: mv source destination
-COMMAND : mv file1 file2
-This is also called renaming a file
+KEYS IN COMMAND MODE:
+gg : used to go to 1st line of a file 
+G : used to go to last line of a file 
+3gg : used to go to 3rd line of a file
+10gg : used to go to 10th line of a file
+:8 : used to go to 8th line of a file 
+M : used to go to middle of the file 
+yy : used to copy the entire line
+3yy : it will copies 3 lines 
+p : used to paste copied content 
+3p : it will prints 3 times 
+dd : used to delete the line
+5dd : used to delete 5 lines 
+u : used to undo the changes
+3u : used to undo 3 times
 
-CAT COMMANDS:
-cat : used to read the data in a file
-tac : used to read the data in a reverse order
-head filename : used to print top 10 lines of a file
-tail filename : used to print last 10 lines of a file
-head -4 filename : used to print top 4 lines of a file
-tail -6 filename : used to print last 6 lines of a file
-sed -n ‘4,16p’ filename : used to print the lines between 4 to 16
-cat file1 file2 : used to read the data from2 files at a time and it will not print the data along with the
-file names
-more file1 file2 : used to read the data from 2 files at a time and it will print the data along with the file
-names
+
+ctrl + r : used to redo the changes 
+/word : used to search for a word in a file 
+?word : used to search for a word in a file 
+:set number : used to set numbers to the data in a file 
+:%s/old/new/ : this is used to replace a word in a file (each line only 1st occourrance) 
+:%s/old/new/g : this is used to replace all the words in a file
+ 
+2. INSERT MODE: This mode is used to insert the data in a file.
+
+i : used to go to insert mode from command mode 
+esc : used to go to command mode from insert mode 
+A : used to go to end of the line
+I : used to go to starting of the line 
+O : used to create a new line (up)
+o : used to create a new line (down)
+
+3. SAVE & QUIT MODE: This mode is used to save the data and quit from vim editor
+:w : data save 
+:q : quit from vim editor 
+:wq : used to save & quit at a time
+:q! : forcefully quit (we will quit from vim editor without saving the data)
+:w! : forcefully save (the data will be saved forcefully)
+:wq! : used to save & quit forcefully 
