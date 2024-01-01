@@ -1,23 +1,64 @@
-			GIT CLASS 2
-
-GIT LOG: This command is used to commits in git 
-git log : used to get all commits
-git log --oneline : used to get only commit ids & messages
-git log --pretty=oneline = used to get only full commit ids & messages
-git log -2 : used to get latest 2 commits 
-git log --follow --all filename : used to get all commits for a file
+			GIT CLASS 3
+GIT RESET: is a command in Git that allows you to move the HEAD and the current branch
+pointer to a specific commit, effectively "rewinding" or "resetting" your project's state. It's
+commonly used to undo changes or to unstage commits.
 
 
-GIT SHOW : It is used to see the changes for a particular commit 
-git show commit-id : used to see the changes of a commit
-git show commit-id --stat : used to see the changes of a commit in stastic format 
+COMMANDS:
+
+git reset --hard HEAD~1 --> used to delete the latest commit along
+with the changes
+
+git reset --hard HEAD~3 --> used to delete the latest 3commit along
+with the changes
+
+git reset --soft HEAD~1 --> used to delete only commits but not
+actions/changes
+
+git reset --soft HEAD~3 --> used to delete only latest commits but not
+actions/changes
 
 
-GIT CONFIG : Used to add our name and email for git history
-git config user.name “username” : used to add our name
-git config user.email “email” : used to add email 
+GIT REVERT: is a command that allows you to undo or reverse the changes made in a
+previous commit. It creates a new commit that undoes the changes introduced by the
+specified commit, effectively taking your code back to a previous state without deleting
+
+git revert commit_id  --> used to delete a particular commit action
+and add a new commit for the change
 
 
-GIT AMEND: This command is used to change commit details
-git commit —amend —author “user <email>”
-git commit —amend -m “new message”
+GIT BRANCHES:
+A branch represents an independent line of development.
+The git branch command lets you create, list, rename, and delete branches.
+The default branch name in Git is master.
+allows you to work on different features or changes to your code independently, without
+affecting the main or other branches.
+It's a way to organize and manage your code changes, making it easier to collaborate and
+maintain your project.
+
+COMMANDS:
+
+git branch used to see the list of branches
+git branch branch-name to create a branch
+git checkout branch-name to switch one branch to another
+git checkout -b branch-name used to create and switch a branch at a
+time
+git branch -m old-branch new-branch used to rename a branch
+git branch -d branch-name to delete a branch
+git branch branch-name deleted-branch-id Used to get deleted branch id
+git branch -D branch-name to delete a branch forcefully
+
+
+The -d option will delete the branch only if it has already been pushed and merged with the
+remote branch. Use -D instead if you want to force the branch to be deleted, even if it hasn't
+been pushed or merged yet. The branch is now deleted locally.
+Now all the things you have done is on your local system.
+
+GIT MERGE:
+Git merge is a command used in the Git version control system to combine changes from one
+branch.
+To merge: git merge branch_name 
+
+
+
+
