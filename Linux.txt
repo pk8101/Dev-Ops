@@ -1,55 +1,45 @@
-                              LINUX CLASS-1
+                               LINUX CLASS-2
+SYSTEM COMMANDS:
+1.  TO CHANGE HOSTNAME : hostnamectl set-hostname flm-devops
+2.  TO CHANGE TIME ZONE : timedatectl set-timezone Asia/Kolkata
 
-THERE ARE DIFFERENT TYPES OF COMMANDS IN LINUX
+HARDWARE COMMANDS:
+1.  TO GET THE CPU INFO : cat /proc/cpuinfo (or) lscpu
+2.  TO GET THE MEM INFO : cat /proc/meminfo (or) free (or) free -m 
+3.  TO GET LIST OF VOLUMES : fdisk -l
+4.  TO GET THE VOLUME INFO : df -h
 
-SYSTEM COMMANDS
-HARDWARE COMMANDS
-FILE COMMANDS
-COPY COMMANDS
-PERMISSIONS
-USER COMMANDS
-SEARCH COMMANDS
-NETWORKING COMMANDS
+FILE COMMANDS:
+1.  TO CREATE A FILE : touch filename
+2.  TO CREATE MULTIPLE FILES : touch aws azure gcp
+3.  TO CREATE FILES IN SERIALIZED WAY : touch file{1..7}
+4.  TO SEE ALL THE FILES : ll (or) ls
 
+ll vs ls:
+ll (long list) : used to give full info about files 
+ls (short list) : used to give only file names
 
-By default we are in ec2-user, To switch to root : sudo -i (or) sudo su -
-To logout from root user : exit
+REMOVING A FILE :
+rm filename : used to remove single file with permission
+rm -f filename : used to remove single file without permission
 
+HERE -f means forcefully:
+rm aws azure gcp : used to remove multiple file with permission 
+rm -f aws azure gcp : used to remove single file without permission 
+rm -f flm{1..8} : used to remove 8 files without permission
+rm -f * : used to remove all files
+rm -f A* : used to remove files which are started with A*
+rm -f c* : used to remove files which are started with c*
 
-
-SYSTEM COMMANDS :
-
-uname : to get OS 
-uname -r : to get kernel version
-uname -a : to get full info about os
-uptime : displays since how long our instance is in running state
-uptime -p : it shows only time
-
-
-hostname : to get hostname of the system
-hostname -i : to get private-ip of our system
-ip addr : to get private-ip of our system
-ifconfig : to get private-ip of our system
-ip route : to get private-ip of our system
-
-last reboot : used to get info about last reboot of our system
-
-clear : used to clear the entire screen (or) use ctrl + l (shortcut)
-
-DATE:
-date : used to get todays date
-date +”%d” : to get only date
-date +”%m” : to get only month
-date +”%y” : to get only year
-date +”%H” : to get only Hours
-date +”%M” : to get only minutes
-date +”%S” : to get only seconds
-date +”%D” : date in mm/dd/yyyy
-date +”%F” : date in yyyy-mm-dd
-date +”%A” : day of the week (monday, tuesday)
-date +”%B” : month of the year (jan, feb)
-timedatectl : to get local time, universal time, RTC time ect ...
-
-
-whoami : used to get current loggined user 
-who : used to get list of login users
+CREATING A FOLDER:
+mkdir foldername : used to create a directory
+HERE mkdir means make directory
+mkdir aws azure gcp : used to create multiple directories
+mkdir srikanth{1..5} : used to create 5 directories (srikanth1 to srikanth5)
+ 
+DELETING A FOLDER: 
+rmdir foldername : used to remove single empty directory 
+rmdir aws azure gcp : used to remove multiple empty directory 
+rmdir srikanth{1..5} : used to remove srikanth empty directories 
+rmdir * : used to remove all directories
+rm -rf * : used to remove all files & directories 
