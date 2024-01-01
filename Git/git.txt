@@ -1,20 +1,23 @@
-			GIT CLASS 1
+			GIT CLASS 2
 
-TO INSTALL GIT : yum install git -y
-yum : yellowdog updater modifier
--y : without permission
-
-
-TO INTI A GIT : git init 
-TO TRACK A FILE : git add filename 
-TO TRACK MULTIPLE FILES : git add file1 file2 file3
-TO TRACK ALL FILES : git add *
+GIT LOG: This command is used to commits in git 
+git log : used to get all commits
+git log --oneline : used to get only commit ids & messages
+git log --pretty=oneline = used to get only full commit ids & messages
+git log -2 : used to get latest 2 commits 
+git log --follow --all filename : used to get all commits for a file
 
 
-TO COMMIT A FILE : git commit -m “message” filename
-TO COMMIT MULTIPLE FILES : git commit -m “message” file1 file2 file3
-TO COMMIT ALL TRACKING FILES : git commit -m “message” .
+GIT SHOW : It is used to see the changes for a particular commit 
+git show commit-id : used to see the changes of a commit
+git show commit-id --stat : used to see the changes of a commit in stastic format 
 
 
-TO GET GIT HISTORY: git log
-TO SHOW THE CHANGES: git show commit-id 
+GIT CONFIG : Used to add our name and email for git history
+git config user.name “username” : used to add our name
+git config user.email “email” : used to add email 
+
+
+GIT AMEND: This command is used to change commit details
+git commit —amend —author “user <email>”
+git commit —amend -m “new message”
