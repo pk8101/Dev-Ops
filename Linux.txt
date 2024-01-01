@@ -1,71 +1,53 @@
-			LINUX CLASS 5
+			LINUX CLASS 6
+PERMISSION COMMANDS:
+TO CHANGE THE PERMISSIONS OF A FILE : chmod 777 filename
+TO CHANGE PERMISSIONS OF A MULTIPLE FILES : chmod 777 aws azure gcp
+TO CHANGE PERMISSIONS OF ALL FILES : chmod 777 *
+TO CHANGE PERMISSIONS OF A FOLDER ONLY : chmod 777 foldername
+TO CHANGE PERMISSIONS OF A FOLDER & FILES INSIDE THE FOLDER : chmod 777 folder -R
+TO CHANGE PERMISSIONS OF FILES PRESENT IN FOLDER : chmod 777 folder/*
+TO ADD EXECUTABLE PERMISSIONS TO EXISITING PERMISSIONS OF A FILE : chmod +x file
 
-TO COMPARE 2 FILES : cmp file1 file2
-TO GET THE DIFFERENCES B/W 2 FILES : diff file1 file2
-TO OPEN 2 FILES IN VIM EDITOR: vim -o file1 file2 (up and down)
-TO OPEN 2 FILES IN VIM EDITOR : vim -O file1 file2 (side by side)
-TO ENCRYPT A FILE : gpg -c filename
-TO DECRYPT A FILE : gpg -d filename.gpg
+CHANGING OWNERS TO FILES/FOLDERS:
+TO CHANGE USER OF A FILE : chown username file
+TO CHANGE GROUP OF A FILE : chgrp groupname filename
+TO CHANGE USER & GROUP AT A TIME : chown user:group filename
+TO CHANGE USER & GROUP AT A TIME TO MULTIPLE FILES : chown user:group aws azure gcp
+TO CHANGE USER & GROUP AT A TIME TO ALL FILES : chown user:group *
+TO CHANGE USER & GROUP OF A FOLDER ONLY : chown user:group folder
+TO CHANGE USER & GROUP OF A FOLDER & FILES INSIDE THE FOLDER : chown user:group
+folder -R
+TO CHANGE USER & GROUP OF FILES PRESENT IN FOLDER : chown user:group folder/*
 
-LETS UNDERSTAND THE FILE:
--rw-r--r-- 1 root root 45 Dec 15 13:43 azure
 
-TYPE OF THE FILE (-) : 
-- : REGULAR FILE 
-d : DIRECTORY FILE 
-c : CHARACTER FILE
-b : BLOCKED FILE 
+GREP COMMANDS: (Global Regular Expression Print)
+This command is used to search for a word in a file 
+SYNTAX: grep “word” filename 
+TO SEARCH FOR A WORD CALLED AWS IN MYFILE : grep “aws” myfile 
+Here “aws” = word
+myfile = filename 
+To search along with line numbers : grep -n “word” filename
+To search without case sensitive : grep -i “word” filename 
+To get no of occurrences in a file : grep -c “word” filename 
+To search for multiple words in a file : grep -e “word1” -e “word2” -e “word3” filename 
+To search for a word from multiple files : grep “word” file1 file2 file3
+To search for multiple words from multiple files : grep -in -e “word1” -e “word2” file1 file2.
 
-PERMISSIONS OF A FILE: (rw-r--r--)
-r : read (4)
-w : write (2)
-x : execute (1)
-- : nothing (0)
-rw- : user permissions = 4+2+0 = 6
-r-- : group permissions = 4+0+0 = 4
-r-- : others permissions = 4+0+0 = 4
-------------
-644
-------------
-EX: 
-user : rwx = 4+2+1 = 7
-group : r-x = 4+0+1 = 5
-others : -w- = 0+2+0 = 2
 
-ACL (Access Control List) : 
-file = 1
-folder = 2
+FIND COMMAND: This command is used to search for a file/folder in our system
+SYNTAX: find path filename 
+find . -name file : used to find a file in current directory
+find /proc/ -name filename : used to find a file in proc directory
+find . -type d -name folder : used to find a folder in current directory
+find . -type f -name <file1.txt> : used to find a file in current directory
+find . -type f -perm 777 : Finds all the files whose permissions are 777 in the current directory 
+find . -type f ! -perm 777 : Finds all the files whose permissions are NOT 777 in the current directory
 
-FILE OWNERS:
-root = user
-root = group
 
-NO OF CHARACTERS IN A FILE: (45)
-
-FILE CREATION/MODIFICATION DETAILS (Dec 15 13:43)
-
-FILE NAME (azure)
-
-USER COMMANDS:
-Note: whenever we create any user, group will created automatically.
-if we delete the user, group will be deleted automatically
-whenever we create any user, directory will gets created in /home directory
-TO SEE THE LIST OF USERS : cat /etc/passwd
-TO ADD A USER : useradd username 
-upendra:x:1002:1002::/home/upendra:/bin/bash
-upendra (username)
-x : it stores the password of the user
-1002 : UID (User ID)
-1002 : GID (Group ID)
-/home/upendra : This is users path 
-/bin/bash : this is our shell path 
-TO DELETE A USER : userdel username
-TO GET ID’s OF A USER : id username 
-TO SWITCH TO ANOTHER USER : su - username
-TO SET A PASSWORD TO USER : passwd username
-TO DELETE A USER ALONG WITH FOLDER : userdel -r username (r=recursive)
-
-GROUP COMMANDS:
-TO SEE LIST OF GROUPS : cat /etc/group
-TO CREATE A GROUP : groupadd groupname
-TO DELETE A GROUP : groupadd groupname
+LOCATE COMMAND:
+Locate command is also used to search for a files/folders in linux system. 
+command: locate filename
+Diff b/w locate and find:
+Find command will search only for a particular path that gives quick output.
+Locate command will search for entire directory which delays the output. Before performing
+the locate command we must update the linux database by using updatedb command
