@@ -1,0 +1,20 @@
+			GIT CLASS 1
+
+TO INSTALL GIT : yum install git -y
+yum : yellowdog updater modifier
+-y : without permission
+
+
+TO INTI A GIT : git init 
+TO TRACK A FILE : git add filename 
+TO TRACK MULTIPLE FILES : git add file1 file2 file3
+TO TRACK ALL FILES : git add *
+
+
+TO COMMIT A FILE : git commit -m “message” filename
+TO COMMIT MULTIPLE FILES : git commit -m “message” file1 file2 file3
+TO COMMIT ALL TRACKING FILES : git commit -m “message” .
+
+
+TO GET GIT HISTORY: git log
+TO SHOW THE CHANGES: git show commit-id 
