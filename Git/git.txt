@@ -1,63 +1,20 @@
-			GIT CLASS 3
-GIT RESET: is a command in Git that allows you to move the HEAD and the current branch
-pointer to a specific commit, effectively "rewinding" or "resetting" your project's state. It's
-commonly used to undo changes or to unstage commits.
+			GIT CLASS 4
 
 
-COMMANDS:
+git update-ref -d HEAD -->it will delete all commits
 
-git reset --hard HEAD~1 --> used to delete the latest commit along
-with the changes
-
-git reset --hard HEAD~3 --> used to delete the latest 3commit along
-with the changes
-
-git reset --soft HEAD~1 --> used to delete only commits but not
-actions/changes
-
-git reset --soft HEAD~3 --> used to delete only latest commits but not
-actions/changes
+senerio:
+if we have 5 files and we commit only 4 files then to commit all files in one commit then:
+git commit --amend --no-edit-->it will add automatically cos it is staging
 
 
-GIT REVERT: is a command that allows you to undo or reverse the changes made in a
-previous commit. It creates a new commit that undoes the changes introduced by the
-specified commit, effectively taking your code back to a previous state without deleting
+Temp delete:
+git stash --> to temp delete the changes
+git stash apply --> to get the data back that we deleted temp
+git stash list -->to get list of stash 
+git stash drop stash@{2}-->to delete particular stash data
+git stash clear -->to delete all stash
 
-git revert commit_id  --> used to delete a particular commit action
-and add a new commit for the change
-
-
-GIT BRANCHES:
-A branch represents an independent line of development.
-The git branch command lets you create, list, rename, and delete branches.
-The default branch name in Git is master.
-allows you to work on different features or changes to your code independently, without
-affecting the main or other branches.
-It's a way to organize and manage your code changes, making it easier to collaborate and
-maintain your project.
-
-COMMANDS:
-
-git branch used to see the list of branches
-git branch branch-name to create a branch
-git checkout branch-name to switch one branch to another
-git checkout -b branch-name used to create and switch a branch at a
-time
-git branch -m old-branch new-branch used to rename a branch
-git branch -d branch-name to delete a branch
-git branch branch-name deleted-branch-id Used to get deleted branch id
-git branch -D branch-name to delete a branch forcefully
-
-
-The -d option will delete the branch only if it has already been pushed and merged with the
-remote branch. Use -D instead if you want to force the branch to be deleted, even if it hasn't
-been pushed or merged yet. The branch is now deleted locally.
-Now all the things you have done is on your local system.
-
-GIT MERGE:
-Git merge is a command used in the Git version control system to combine changes from one
-branch.
-To merge: git merge branch_name 
 
 
 
